@@ -28,8 +28,9 @@ This project transforms raw CSV data into a production-ready structured database
 
 📊 ERD (Entity Relationship Diagram)
 
-The database follows a Crow’s Foot ERD model and includes 8 major entities:
-<img width="960" height="593" alt="d9c09be2375c48f0a9018fe95d4f13fa" src="https://github.com/user-attachments/assets/0ee97197-9637-4c8a-b64e-839dccb49622" />
+<img width="960" height="593" alt="d9c09be2375c48f0a9018fe95d4f13fa" src="https://github.com/user-attachments/assets/5d5216db-840e-4739-ba9d-2e3dde15b2d7" />
+
+The full ERD image is included in the report & repository.
 
 🛠️ Features & What This Project Demonstrates
 ✔ 1. Database Design
@@ -169,7 +170,7 @@ Version control & GitHub project structure
 
 🧾 Author
 
-Kishor Shrestha
+Kishor Khatiwada
 Business Computer Information Systems
 University of North Texas
 
