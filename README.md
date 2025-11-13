@@ -83,7 +83,8 @@ Reviews
 
 Full ERD image is included below ↓
 
-<img width="960" height="593" alt="d9c09be2375c48f0a9018fe95d4f13fa" src="https://github.com/user-attachments/assets/60fb0f01-a868-4880-99ab-3a41f02bbb3a" />
+<img width="1226" height="651" alt="ERD drawio" src="https://github.com/user-attachments/assets/f41d1a18-67c6-4d41-84ee-b4b35afc020d" />
+
 
 
 🧹 Data Cleaning & Transformation
