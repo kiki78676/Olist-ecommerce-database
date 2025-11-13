@@ -1,71 +1,69 @@
-📦 Olist E-Commerce Relational Database Project
-End-to-End Database Design, Data Cleaning, SQL Modeling & Analysis
+📦 Olist E-Commerce Relational Database System
+End-to-End Data Engineering • Database Design • SQL Modeling • ETL Pipeline
 
-This project implements a full relational database system using the Brazilian Olist E-Commerce Dataset, covering database design, entity modeling, data cleaning, data loading, and analytical SQL reporting.
-It demonstrates real-world skills in SQL, database design, Python data processing, and relational modeling.
 
-🚀 Project Overview
 
-The goal of this project is to build a complete e-commerce relational database capable of analyzing:
 
-Customer behavior
 
-Order patterns
 
-Seller performance
 
-Product categories
 
-Shipping/fulfillment metrics
+🌟 Overview
 
-Payment methods
+This project delivers a full end-to-end relational database system built using the Brazilian Olist E-Commerce Dataset.
+It involves:
 
-Review and customer experience trends
+📐 Database Modeling (Crow’s Foot ERD)
 
-The dataset includes 100k+ orders, 3k sellers, 70k products, and a full payment + review system.
+🧽 Data Cleaning & Transformation (Python + Pandas)
 
-This project transforms raw CSV data into a production-ready structured database using SQLite, Python, and Pandas.
+🗄️ SQL Database Creation (SQLite with proper PK/FK constraints)
 
-📊 ERD (Entity Relationship Diagram)
+🔌 ETL Pipeline converting raw CSV files → clean tables
 
-<img width="960" height="593" alt="d9c09be2375c48f0a9018fe95d4f13fa" src="https://github.com/user-attachments/assets/5d5216db-840e-4739-ba9d-2e3dde15b2d7" />
+📊 Analytical SQL Queries & Reporting
 
-The full ERD image is included in the report & repository.
+🧾 Complete Data Dictionary & Documentation
 
-🛠️ Features & What This Project Demonstrates
-✔ 1. Database Design
+This project demonstrates real industry-level data engineering & database design skills.
 
-Defined business requirements, scope, and objectives
+🚀 Project Objectives
 
-Designed complete relational schema
+To build a complete analytical database capable of answering questions about:
 
-Created Crow’s Foot ERD
+👥 Customer behavior
 
-Created full data dictionary with types, constraints, PK/FK relationships
+🛍️ Order lifecycle
 
-✔ 2. Data Cleaning & Transformation (Python / Pandas)
+🏪 Seller performance
 
-All raw CSV files from Olist were cleaned:
+🛒 Product categories & inventory info
 
-Trimmed strings & fixed inconsistent casing
+🚚 Shipping & fulfillment efficiency
 
-Converted timestamps to SQL YYYY-MM-DD HH:MM:SS format
+💳 Payment method usage
 
-Ensured foreign key integrity
+⭐ Customer review behavior
 
-Removed duplicates
+The dataset includes:
 
-Converted numeric fields
+100k+ orders
 
-Standardized column naming
+70k+ products
 
-Handled NULL values properly
+100k+ payments
 
-Each cleaned dataframe was loaded into SQLite using .to_sql().
+100k+ customer reviews
 
-✔ 3. Database Creation & Table Generation
+3k+ sellers
 
-All tables were created with CREATE TABLE SQL:
+🗺️ ERD — Entity Relationship Diagram
+
+The Olist system was modeled into 8 fully normalized tables with correct PK/FK relationships.
+
+This ERD was created using Draw.io and follows proper Crow’s Foot notation.
+
+📌 Entities include:
 
 Customers
 
@@ -83,97 +81,110 @@ Payments
 
 Reviews
 
-Each table includes appropriate PRIMARY KEY and FOREIGN KEY constraints.
+Full ERD image is included below ↓
 
-✔ 4. Data Loading
+<img width="960" height="593" alt="d9c09be2375c48f0a9018fe95d4f13fa" src="https://github.com/user-attachments/assets/60fb0f01-a868-4880-99ab-3a41f02bbb3a" />
 
-Thousands of cleaned rows were inserted into SQLite:
 
-Verified constraints
+🧹 Data Cleaning & Transformation
 
-Checked row counts
+All raw CSV files were cleaned using Python + Pandas:
 
-Ensured no orphan foreign keys
+✔ Standardization
 
-Validated referential integrity
+Removed leading/trailing spaces
 
-✔ 5. SQL Analysis & Reporting
+Unified casing (lowercase categories, uppercase states, title-case cities)
 
-Five analytical queries were created with:
+Converted text timestamps → SQL YYYY-MM-DD HH:MM:SS
 
-Full SQL statement
+✔ Type Conversion
 
-Plain English explanation
+Numeric columns converted to Int64 or float
 
-Screenshot of result sets
+IDs converted to string
 
-Examples include:
+Handled None, NaN, and missing values consistently
 
-Revenue by product category
+✔ Integrity Checking
 
-Delivery performance vs estimated date
+Removed duplicate primary keys
 
-Payment method usage
+Enforced foreign-key relationships
 
-Customer loyalty analysis
+Ensured no orphan customer_id, seller_id, or order_id
 
-Review score behavior
+✔ Final Output
+
+Each cleaned dataframe was inserted into SQLite using:
+
+df.to_sql("TableName", con=engine, if_exists="append", index=False)
+
+🗄️ Database Schema Design
+✔ Implemented full SQL DDL:
+
+CREATE TABLE statements
+
+Primary key constraints
+
+Foreign key constraints
+
+TIMESTAMP formatting
+
+Data types selected based on dictionary design
+
+All SQL files are included in the /code directory.
+
+📊 Analytical SQL Queries (5 Reports)
+
+The project includes 5 real analysis reports, each with:
+
+Plain English description
+
+SQL Query
+
+Screenshot of results
+
+Examples:
+
+1️⃣ Top Product Categories by Revenue
+SELECT product_category_name, SUM(price) AS total_revenue
+FROM Order_Items
+JOIN Products USING (product_id)
+GROUP BY product_category_name
+ORDER BY total_revenue DESC;
+
+2️⃣ Average Delivery Delay vs Estimated Delivery
+3️⃣ Most Common Payment Method
+4️⃣ Top Cities by Number of Orders
+5️⃣ Review Scores Distribution
+
+Screenshots included in the final report.
 
 🧰 Technologies Used
 
-Python (Pandas, SQLAlchemy)
+Python: Pandas, NumPy, SQLAlchemy
 
-Jupyter Notebook
+SQLite: SQL engine and storage
 
-SQLite
+Jupyter Notebook: ETL & Cleaning
 
-Draw.io / Diagrams.net (for ERD)
+Draw.io: ERD creation
 
-Git / GitHub
+GitHub: Version control & publishing
 
-📘 Source Dataset
+📘 Dataset Source
 
-This project is based on the public Olist E-Commerce Dataset from Kaggle.
-Dataset includes:
+This project uses the public Olist E-Commerce Dataset (Brazil) available on Kaggle.
 
-100k orders
-
-112k order items
-
-70k products
-
-3k sellers
-
-100k reviews
-
-100k+ payment documents
-
-💡 Key Learning Outcomes
-
-Through this project, the following skills were developed:
-
-Real-world data modeling
-
-ERD design using Crow’s Foot notation
-
-SQL schema creation
-
-ETL pipeline for CSV → DataFrame → Database
-
-Data cleaning with Pandas
-
-Analytical SQL queries
-
-Database documentation (data dictionary)
-
-Version control & GitHub project structure
-
-🧾 Author
+👨‍💻 Author
 
 Kishor Khatiwada
 Business Computer Information Systems
 University of North Texas
 
-If you have any suggestions or feedback, feel free to open an issue or contact me!
+🔗 Feel free to open issues, fork the repo, or reach out!
 
-🎉 Thank you for viewing this project!
+⭐ If you found this useful…
+
+Please consider starring the repository — it helps with visibility and supports the project 🙌
