@@ -1,35 +1,29 @@
 📦 Olist E-Commerce Relational Database System
 End-to-End Data Engineering • Database Design • SQL Modeling • ETL Pipeline
-
-
-
-
-
-
-
-
 🌟 Overview
+What This Project Delivers
 
-This project delivers a full end-to-end relational database system built using the Brazilian Olist E-Commerce Dataset.
-It involves:
+This project builds a complete end-to-end relational database system using the Brazilian Olist E-Commerce Dataset.
+It includes modeling, ETL, SQL schema creation, data cleaning, and analytical reporting.
 
-📐 Database Modeling (Crow’s Foot ERD)
+Includes:
 
-🧽 Data Cleaning & Transformation (Python + Pandas)
+📐 Crow’s Foot ERD
 
-🗄️ SQL Database Creation (SQLite with proper PK/FK constraints)
+🧽 Python + Pandas cleaning
 
-🔌 ETL Pipeline converting raw CSV files → clean tables
+🗄️ SQLite database with PK/FK
 
-📊 Analytical SQL Queries & Reporting
+🔌 ETL Pipeline
 
-🧾 Complete Data Dictionary & Documentation
+📊 Analytical SQL reports
 
-This project demonstrates real industry-level data engineering & database design skills.
+🧾 Documentation & data dictionary
 
 🚀 Project Objectives
+What the Database Answers
 
-To build a complete analytical database capable of answering questions about:
+Designed to answer business questions about:
 
 👥 Customer behavior
 
@@ -37,15 +31,15 @@ To build a complete analytical database capable of answering questions about:
 
 🏪 Seller performance
 
-🛒 Product categories & inventory info
+🛒 Product categories
 
-🚚 Shipping & fulfillment efficiency
+🚚 Delivery efficiency
 
-💳 Payment method usage
+💳 Payment methods
 
-⭐ Customer review behavior
+⭐ Review behavior
 
-The dataset includes:
+Dataset includes:
 
 100k+ orders
 
@@ -53,17 +47,16 @@ The dataset includes:
 
 100k+ payments
 
-100k+ customer reviews
+100k+ reviews
 
 3k+ sellers
 
-🗺️ ERD — Entity Relationship Diagram
+🗺️ Entity Relationship Diagram (ERD)
+8 Fully Normalized Entities
 
-The Olist system was modeled into 8 fully normalized tables with correct PK/FK relationships.
+Built using Draw.io with proper Crow’s Foot notation.
 
-This ERD was created using Draw.io and follows proper Crow’s Foot notation.
-
-📌 Entities include:
+Entities:
 
 Customers
 
@@ -81,111 +74,102 @@ Payments
 
 Reviews
 
-Full ERD image is included below ↓
-
+ERD Image:
 <img width="1226" height="651" alt="ERD drawio" src="https://github.com/user-attachments/assets/f41d1a18-67c6-4d41-84ee-b4b35afc020d" />
 
-
-
 🧹 Data Cleaning & Transformation
-
-All raw CSV files were cleaned using Python + Pandas:
-
+Python + Pandas ETL
 ✔ Standardization
+Making All Columns Consistent
 
-Removed leading/trailing spaces
+Removed extra spaces
 
-Unified casing (lowercase categories, uppercase states, title-case cities)
+Fixed upper/lower/title-case
 
-Converted text timestamps → SQL YYYY-MM-DD HH:MM:SS
+Converted timestamps → SQL datetime
 
 ✔ Type Conversion
+Ensuring Proper Data Types
 
-Numeric columns converted to Int64 or float
+Numeric → int64/float
 
-IDs converted to string
+IDs → string
 
-Handled None, NaN, and missing values consistently
+✔ Integrity Enforcement
+Validating Relationships
 
-✔ Integrity Checking
+Removed duplicate PKs
 
-Removed duplicate primary keys
+No orphan foreign keys
 
-Enforced foreign-key relationships
+Enforced relationships
 
-Ensured no orphan customer_id, seller_id, or order_id
-
-✔ Final Output
-
-Each cleaned dataframe was inserted into SQLite using:
+Final load:
 
 df.to_sql("TableName", con=engine, if_exists="append", index=False)
 
-🗄️ Database Schema Design
-✔ Implemented full SQL DDL:
+🗄️ Database Schema (DDL)
+Full SQL Structure
 
-CREATE TABLE statements
+Includes:
 
-Primary key constraints
+CREATE TABLE scripts
 
-Foreign key constraints
+Primary keys
 
-TIMESTAMP formatting
+Foreign keys
 
-Data types selected based on dictionary design
+Correct SQL data types
 
-All SQL files are included in the /code directory.
+Timestamp fields
 
-📊 Analytical SQL Queries (5 Reports)
+All in /code folder.
 
-The project includes 5 real analysis reports, each with:
+📊 Analytical SQL Reports
+5 Business-Driven Insights
 
-Plain English description
-
-SQL Query
-
-Screenshot of results
-
-Examples:
+Report includes SQL + explanation + screenshot.
 
 1️⃣ Top Product Categories by Revenue
+SQL Query
 SELECT product_category_name, SUM(price) AS total_revenue
 FROM Order_Items
 JOIN Products USING (product_id)
 GROUP BY product_category_name
 ORDER BY total_revenue DESC;
 
-2️⃣ Average Delivery Delay vs Estimated Delivery
+2️⃣ Delivery Delays
+Actual vs Estimated Delivery
 3️⃣ Most Common Payment Method
-4️⃣ Top Cities by Number of Orders
-5️⃣ Review Scores Distribution
-
-Screenshots included in the final report.
-
+Payment Distribution
+4️⃣ Top Cities by Total Orders
+Geography-Based Demand
+5️⃣ Review Score Distribution
+Customer Experience Analysis
 🧰 Technologies Used
+Tools Behind the Project
 
-Python: Pandas, NumPy, SQLAlchemy
+Python
 
-SQLite: SQL engine and storage
+Pandas, NumPy
 
-Jupyter Notebook: ETL & Cleaning
+SQLite
 
-Draw.io: ERD creation
+SQLAlchemy
 
-GitHub: Version control & publishing
+Jupyter Notebook
+
+Draw.io
+
+GitHub
 
 📘 Dataset Source
-
-This project uses the public Olist E-Commerce Dataset (Brazil) available on Kaggle.
-
+Public Olist Brazil E-Commerce Dataset (Kaggle)
 👨‍💻 Author
-
 Kishor Khatiwada
+
 Business Computer Information Systems
 University of North Texas
 
-🔗 Feel free to open issues, fork the repo, or reach out!
-
-⭐ If you found this useful…
-
-Please consider starring the repository — it helps with visibility and supports the project 🙌
+⭐ Support the Project
+Star the Repo If You Found It Helpful!
