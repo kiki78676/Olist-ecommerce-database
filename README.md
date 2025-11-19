@@ -74,6 +74,7 @@ Final load into SQLite:
 
 ```python
 df.to_sql("TableName", con=engine, if_exists="append", index=False)
+```
 
 # 🗄️ Database Schema (DDL)  
 ### SQL Structure
