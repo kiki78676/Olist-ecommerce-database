@@ -113,6 +113,7 @@ JOIN Products p
     ON oi.product_id = p.product_id
 GROUP BY p.product_category_name
 ORDER BY total_revenue DESC;
+```
 
 # 2️⃣ Average Delivery Delay vs Estimated Delivery  
 ### Delivery Performance Analysis
